@@ -362,6 +362,13 @@ textarea.input {
   margin-bottom: 30px;
 }
 
+#breadcrumba {
+  padding: 30px 0px;
+  background: #FBFBFC;
+  border-bottom: 1px solid #E4E7ED;
+  margin-bottom: 0px;
+}
+
 #breadcrumb .breadcrumb-header {
   display: inline-block;
   margin-top: 0px;

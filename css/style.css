@@ -1793,6 +1793,147 @@ textarea.input {
 }
 
 /*=========================================================
+	0 -> Login
+===========================================================*/
+.form-box {
+  width: 380px;
+  height: 750px;
+  position:relative;
+  margin: 5% auto;
+  background: #1E1F29;
+  padding: 5px;
+  overflow: hidden;
+}
+
+.avatar{
+  position: relative;
+  margin-left: 25%;
+  margin-bottom: 15%;
+}
+
+.button-box{
+  width: 236.27px;
+  margin: 25px auto;
+  box-shadow: 0 0 20px 5px #ff61241f;
+  border-radius: 30px;
+}
+.toggle-btn{
+  padding: 10px 29px;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  outline: none;
+  position: relative;
+  color: #FFF;
+}
+
+#btn{
+  top: 1;
+  position: absolute;
+  width: 120px;
+  height: 40px;
+  background: linear-gradient(to right, #ff105f,#ffad06);
+  border-radius:30px;
+  transition: .5s;
+}
+
+.input-group{
+  top: 150px;
+  position: absolute;
+  width: 280px;
+  transition: .5s;
+}
+
+.input-group-r{
+  top: 90px;
+  position: absolute;
+  width: 280px;
+  transition: .5s;
+}
+
+.input-field{
+  width: 100%;
+  padding: 10px 0;
+  margin: 5px 0;
+  border-left: 0;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 1px solid #FFF;
+  outline: none;
+  background: transparent;
+  color: #FFF;
+}
+
+.chech-box{
+  margin: 30px 10px 30px 0;
+}
+
+.submit-btn {
+  width:50%;
+  padding: 10px 30px;
+  cursor: pointer;
+  display: block;
+  margin-top: 20%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 0;
+  outline: none;
+  background-color: #D10024;
+  border-radius: 30px;
+  color: #FFF;
+}
+
+.submit-btn-r {
+  width:50%;
+  padding: 10px 30px;
+  cursor: pointer;
+  display: block;
+  margin-top: 15%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 0;
+  outline: none;
+  background-color: #D10024;
+  border-radius: 30px;
+  color: #FFF;
+}
+
+#login{
+  left: 50px;
+}
+#register{
+  left: -450px;
+}
+
+#ciudad-lbl{
+  color: #FFF;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  margin-left: 20%;
+}
+
+#ciudad{
+  color: black;
+}
+
+.form-control{
+  width:100%;
+  padding: 0 0;
+  font-weight: bold;
+}
+
+.form-check{
+  margin-top: 5px;
+  color: #FFF;
+}
+
+.olv-con{
+  color: #FFF;
+  margin-top: 100px;
+}
+
+
+/*=========================================================
 	09 -> CHECKOUT PAGE
 ===========================================================*/
 

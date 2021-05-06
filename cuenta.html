@@ -15,6 +15,11 @@
  		<!-- Bootstrap -->
  		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
 
+		<!-- Jquery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
  		<!-- Slick -->
  		<link type="text/css" rel="stylesheet" href="css/slick.css"/>
  		<link type="text/css" rel="stylesheet" href="css/slick-theme.css"/>
@@ -108,10 +113,10 @@
 				<!-- row -->
 				<div class="row">
 					<div class="col-md-12">
-						<h3 class="breadcrumb-header">Pag blanco</h3>
+						<h3 class="breadcrumb-header">Inicio Sesíon</h3>
 						<ul class="breadcrumb-tree">
 							<li><a href="index.html">Inicio</a></li>
-							<li class="active">Pag blanco</li>
+							<li class="active">Inicio Sesíon</li>
 						</ul>
 					</div>
 				</div>
@@ -122,30 +127,78 @@
 		<!-- /BREADCRUMB -->
 
 		<!-- SECTION -->
-		<div class="section">
-			<div class="container">
-				<!-- row -->
-				<div class="row">
-
-					<div class="col-md-6">
-						<!-- Billing Details -->
-						<div class="billing-details">
-							<div class="section-title">
-								<h3 class="title">Cuenta</h3>
-							</div>
-							<div class="form-group">
-								<input class="input" type="email" name="email" placeholder="Email">
-							</div>
-							<div class="form-group">
-								<input class="input" type="password" name="password" placeholder="Contraseña">
-							</div>
-							
-						</div>
-					</div>
+		    <div class="form-box">
+				<div class="button-box">
+					<div id="btn"></div>
+					<button type="button" class="toggle-btn" onclick="login()">Iniciar</button>
+					<button type="button" class="toggle-btn" onclick="register()">Registarse</button>
 				</div>
-				<!-- /row -->
+				<form id="login" class="input-group">
+					<img class="avatar" src="img/avatar.png" alt="">
+					<input type="email" class="input-field" placeholder="Correo electronico" required>
+					<input type="password" class="input-field" placeholder="Contraseña" required>
+					<a class="olv-con" href="index.html">¿Olvidó su contraseña?</a>
+					<button type="submit" class="submit-btn">Iniciar</button>
+				</form>
+
+					<form id="register" class="input-group-r">
+						<input type="text" class="input-field" placeholder="Nombre" required>
+						<input type="text" class="input-field" placeholder="Apellido" required>
+						<input type="text" class="input-field" placeholder="Rut" required>
+						<input type="email" class="input-field" placeholder="Correo electronico" required>
+						<input type="password" class="input-field" placeholder="Contraseña" required>
+						<input type="tel" class="input-field" placeholder="Telefono" required>
+						<input type="" class="input-field" placeholder="Dirección + Número" required>
+
+						<div class="form-check">
+							<label class="form-check-label" for="casa_depto">
+								<input type="radio" class="form-check-input" name="casa_depto" id="casa_depto" value="Casa" checked> Casa
+							</label>
+						</div>
+						<div class="form-check">
+							<label class="form-check-label" for="casa_depto">
+								<input type="radio" class="form-check-input" name="casa_depto" id="casa_depto" value="Depto"> Departamento
+							</label>
+						</div>
+
+						<label id="ciudad-lbl" for="ciudad">Seleccione su ciudad</label>
+						<select name="ciudad" id="ciudad" class="form-control">
+							<option value="1">Santiago</option>
+							<option value="2">Talca</option>
+							<option value="3">Rancagua</option>
+							<option value="4">Concepcion</option>
+						</select>
+
+						<label id="ciudad-lbl" for="ciudad">Seleccione su comuna</label>
+						<select name="ciudad" id="ciudad" class="form-control">
+							<option value="1">Santiago</option>
+							<option value="2">Talca</option>
+							<option value="3">Rancagua</option>
+							<option value="4">Concepcion</option>
+						</select>
+
+						<button type="submit" class="submit-btn-r">Registrarse</button>
+					</form>
 			</div>
-		</div>
+
+		 <script>
+			 var x = document.getElementById("login");
+			 var y = document.getElementById("register");
+			 var z = document.getElementById("btn");
+
+			 function register(){
+				 x.style.left ="-400px";
+				 y.style.left ="50px";
+				 z.style.left ="190px";
+			 }
+
+			 function login(){
+				 x.style.left ="50px";
+				 y.style.left ="-450px";
+				 z.style.left ="72px";
+			 }
+		 </script>
+
 		<!-- /SECTION -->
 
 		<!-- FOOTER -->

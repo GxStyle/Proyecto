@@ -1,68 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link href="img/minilogo.png" type="image/x-icon" rel="icon">
-		 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-		<title>TechnoScreen - Carrito</title>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="img/minilogo.png" type="image/x-icon" rel="icon">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
- 		<!-- Google font -->
- 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+	<title>TechnoScreen - Cuenta</title>
 
- 		<!-- Bootstrap -->
- 		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
 
-		<!-- Jquery -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
 
- 		<!-- Slick -->
- 		<link type="text/css" rel="stylesheet" href="css/slick.css"/>
- 		<link type="text/css" rel="stylesheet" href="css/slick-theme.css"/>
+	<!-- Jquery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
- 		<!-- nouislider -->
- 		<link type="text/css" rel="stylesheet" href="css/nouislider.min.css"/>
+	<!-- Slick -->
+	<link type="text/css" rel="stylesheet" href="css/slick.css" />
+	<link type="text/css" rel="stylesheet" href="css/slick-theme.css" />
 
- 		<!-- Font Awesome Icon -->
- 		<link rel="stylesheet" href="css/font-awesome.min.css">
+	<!-- nouislider -->
+	<link type="text/css" rel="stylesheet" href="css/nouislider.min.css" />
 
- 		<!-- Custom stlylesheet -->
- 		<link type="text/css" rel="stylesheet" href="css/style.css"/>
+	<!-- Font Awesome Icon -->
+	<link rel="stylesheet" href="css/font-awesome.min.css">
 
-    </head>
-	<body>
-		<!-- HEADER -->
-		<div id="top-header">
-			<div class="container">
-				<ul class="header-links pull-left">
-					<li><a href="#"><i class="fa fa-phone"></i> +569-8131-9581</a></li>
-					<li><a href="#"><i class="fa fa-envelope-o"></i> TechnoScreen@gmail.cl</a></li>
-					<li><a href="#"><i class="fa fa-map-marker"></i> Padre Mariano 356, Providencia</a></li>
-				</ul>
-				<ul class="header-links pull-right">
-					<li><a href="#"><i class="fa fa-user-o"></i> Mi cuenta</a></li>
-				</ul>
-			</div>
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="css/style.css" />
+
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$("#error").hide(); //ocultando el div de los errores
+
+			//indicar que las validaciones del formulario se ejecutaran solo cuando se presione submit
+			$("#register").submit(function () {
+				var mensaje = "Por favor revisar los siguientes detalles en el formulario";
+
+				if ($("#Nombre").val().trim().length == 0) {
+					mensaje = mensaje + "El campo nombre no debe estar vacío";
+				}
+
+				if ($("#Apellido").val().trim().length == 0) {
+					mensaje = mensaje + "El campo apellido no debe estar vacío";
+				}
+
+				if ($("#Rut").val().trim().length == 0) {
+					mensaje = mensaje + "El campo rut no debe estar vacío";
+				}
+
+				if ($("#Correo").val().trim().length == 0) {
+					mensaje = mensaje + "El correo electronico no puede estar vacío";
+				}
+
+				if ($("#Contraseña").val().trim().length == 0) {
+					mensaje = mensaje + "El campo contraseña no debe estar vacío";
+				}
+
+				if (isNaN($("#Telefono").val())) {
+					mensaje = mensaje + "El telefono solo pueden ser numeros";
+				}
+
+				if (mensaje != "Por favor revisar los siguientes detalles en el formulario") {
+					$("#error").html(mensaje);
+					$("#error").show();
+					event.preventDefault();
+				}
+			})
+		});
+
+	</script>
+
+</head>
+
+<body>
+	<!-- HEADER -->
+	<div id="top-header">
+		<div class="container">
+			<ul class="header-links pull-left">
+				<li><a href="#"><i class="fa fa-phone"></i> +569-8131-9581</a></li>
+				<li><a href="#"><i class="fa fa-envelope-o"></i> TechnoScreen@gmail.cl</a></li>
+				<li><a href="#"><i class="fa fa-map-marker"></i> Padre Mariano 356, Providencia</a></li>
+			</ul>
+			<ul class="header-links pull-right">
+				<li><a href="#"><i class="fa fa-user-o"></i> Mi cuenta</a></li>
+			</ul>
 		</div>
-		<!-- /TOP HEADER -->
+	</div>
+	<!-- /TOP HEADER -->
 
-		<!-- MAIN HEADER -->
-		<div id="header">
-			<!-- container -->
-			<div class="container">
-				<!-- row -->
-				<div class="row">
-					<!-- LOGO -->
-					<div class="header-logo">
-						<a href="#" class="logo">
-							<a href="index.html"><img src="./img/logo.png" alt=""></a>
-						</a>
-					</div>
-					<!-- NOMBRE -->
+	<!-- MAIN HEADER -->
+	<div id="header">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row">
+				<!-- LOGO -->
+				<div class="header-logo">
+					<a href="#" class="logo">
+						<a href="index.html"><img src="./img/logo.png" alt=""></a>
+					</a>
+				</div>
+				<!-- NOMBRE -->
 
 				<div class="header-nombre">
 					<p>TechnoScreen</p>
@@ -72,221 +116,231 @@
 					</div>
 
 				</div>
-				
+
 				<!-- ACCOUNT -->
 
-					<div class="header-ctn">
-						<a href="checkout.html"></a>
-						<!-- Cart -->
-						<div class="dropdown">
-							<a href="checkout.html">
-								<i class="fa fa-shopping-cart"></i>
-								<span>Su carrito</span>
-							</a>
-						</div>
-							<!-- /Cart -->
-
-							<!-- Menu Toogle -->
-							<div class="menu-toggle">
-								<a href="#">
-									<i class="fa fa-bars"></i>
-									<span>Menu</span>
-								</a>
-							</div>
-							<!-- /Menu Toogle -->
-						</div>
+				<div class="header-ctn">
+					<a href="checkout.html"></a>
+					<!-- Cart -->
+					<div class="dropdown">
+						<a href="checkout.html">
+							<i class="fa fa-shopping-cart"></i>
+							<span>Su carrito</span>
+						</a>
 					</div>
-					<!-- /ACCOUNT -->
-				</div>
-				<!-- row -->
-			</div>
-			<!-- container -->
-		</div>
-		<!-- /MAIN HEADER -->
-	</header>
-		<!-- /HEADER -->
+					<!-- /Cart -->
 
-		<!-- BREADCRUMB -->
-		<div id="breadcrumb" class="section">
+					<!-- Menu Toogle -->
+					<div class="menu-toggle">
+						<a href="#">
+							<i class="fa fa-bars"></i>
+							<span>Menu</span>
+						</a>
+					</div>
+					<!-- /Menu Toogle -->
+				</div>
+			</div>
+			<!-- /ACCOUNT -->
+		</div>
+		<!-- row -->
+	</div>
+	<!-- container -->
+	</div>
+	<!-- /MAIN HEADER -->
+	</header>
+	<!-- /HEADER -->
+
+	<!-- BREADCRUMB -->
+	<div id="breadcrumb" class="section">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row">
+				<div class="col-md-12">
+					<h3 class="breadcrumb-header">Inicio Sesíon</h3>
+					<ul class="breadcrumb-tree">
+						<li><a href="index.html">Inicio</a></li>
+						<li class="active">Inicio Sesíon</li>
+					</ul>
+				</div>
+			</div>
+			<!-- /row -->
+		</div>
+		<!-- /container -->
+	</div>
+	<!-- /BREADCRUMB -->
+
+	<!-- SECTION -->
+	<div class="form-box">
+		<div class="button-box">
+			<div id="btn"></div>
+			<button type="button" class="toggle-btn" onclick="login()">Iniciar</button>
+			<button type="button" class="toggle-btn" onclick="register()">Registarse</button>
+		</div>
+		<form id="login" class="input-group">
+			<img class="avatar" src="img/avatar.png" alt="">
+			<input type="email" class="input-field" placeholder="Correo electronico" required>
+			<input type="password" class="input-field" placeholder="Contraseña" required>
+			<a class="olv-con" href="index.html">¿Olvidó su contraseña?</a>
+			<button type="submit" class="submit-btn">Iniciar</button>
+		</form>
+
+		<form action="index.html" method="GET" id="register" class="input-group-r">
+			<input type="text" class="input-field" placeholder="Nombre" id="Nombre">
+			<input type="text" class="input-field" placeholder="Apellido" id="Apellido">
+			<input type="text" class="input-field" placeholder="Rut" id="Rut">
+			<input type="email" class="input-field" placeholder="Correo electronico" id="Correo">
+			<input type="password" class="input-field" placeholder="Contraseña" id="Contraseña">
+			<input type="tel" class="input-field" placeholder="Telefono" id="Telefono">
+			<input type="" class="input-field" placeholder="Dirección + Número" required>
+
+			<div class="form-check">
+				<label class="form-check-label" for="casa_depto">
+					<input type="radio" class="form-check-input" name="casa_depto" id="casa_depto" value="Casa" checked>
+					Casa
+				</label>
+			</div>
+			<div class="form-check">
+				<label class="form-check-label" for="casa_depto">
+					<input type="radio" class="form-check-input" name="casa_depto" id="casa_depto" value="Depto">
+					Departamento
+				</label>
+			</div>
+
+			<label id="ciudad-lbl" for="ciudad">Seleccione su ciudad</label>
+			<select name="ciudad" id="ciudad" class="form-control">
+				<option value="1">Santiago</option>
+				<option value="2">Talca</option>
+				<option value="3">Rancagua</option>
+				<option value="4">Concepcion</option>
+			</select>
+
+			<label id="ciudad-lbl" for="ciudad">Seleccione su comuna</label>
+			<select name="ciudad" id="ciudad" class="form-control">
+				<option value="1">Santiago</option>
+				<option value="2">Talca</option>
+				<option value="3">Rancagua</option>
+				<option value="4">Concepcion</option>
+			</select>
+
+			<div class="form-group">
+				<div id="error" class="alert alert-danger"></div>
+				<button type="submit" class="submit-btn-r">Registrarse</button>
+			</div>
+		</form>
+	</div>
+
+	<script>
+		var x = document.getElementById("login");
+		var y = document.getElementById("register");
+		var z = document.getElementById("btn");
+
+		function register() {
+			x.style.left = "-400px";
+			y.style.left = "50px";
+			z.style.left = "190px";
+		}
+
+		function login() {
+			x.style.left = "50px";
+			y.style.left = "-450px";
+			z.style.left = "72px";
+		}
+	</script>
+
+	<!-- /SECTION -->
+
+	<!-- FOOTER -->
+	<footer id="footer">
+		<!-- top footer -->
+		<div class="section">
 			<!-- container -->
 			<div class="container">
 				<!-- row -->
 				<div class="row">
-					<div class="col-md-12">
-						<h3 class="breadcrumb-header">Inicio Sesíon</h3>
-						<ul class="breadcrumb-tree">
-							<li><a href="index.html">Inicio</a></li>
-							<li class="active">Inicio Sesíon</li>
-						</ul>
+					<div class="col-md-3 col-xs-6">
+						<div class="footer">
+							<h3 class="footer-title">Conócenos</h3>
+							<p>Somos una tienda dedicada a venta de monitores en, su mayoria gamer, procurando la
+								calidad y variedad de estos.</p>
+							<ul class="footer-links">
+								<li><a href="#"><i class="fa fa-map-marker"></i>Padre Mariano 356, Providencia</a></li>
+								<li><a href="#"><i class="fa fa-phone"></i>+569-8131-9581</a></li>
+								<li><a href="#"><i class="fa fa-envelope-o"></i>TechnoScreen@gmail.cl</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="clearfix visible-xs"></div>
+
+					<div class="col-md-3 col-xs-6">
+						<div class="footer">
+							<a href="about us.html">
+								<h3 class="footer-title">Información</h3>
+							</a>
+							<ul class="footer-links">
+								<li><a href="about us.html#nosotros">Acerca de nosotros</a></li>
+								<li><a href="about us.html#contactos">Contáctanos</a></li>
+								<li><a href="about us.html#politicas">Privacidad y politicas</a></li>
+								<li><a href="about us.html#terminos">Terminos y condiciones</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="col-md-3 col-xs-6">
+						<div class="footer">
+							<h3 class="footer-title">Serviciós</h3>
+							<ul class="footer-links">
+								<li><a href="#">Mi Cuenta</a></li>
+								<li><a href="#">Mi Carrito</a></li>
+							</ul>
+						</div>
 					</div>
 				</div>
 				<!-- /row -->
 			</div>
 			<!-- /container -->
 		</div>
-		<!-- /BREADCRUMB -->
+		<!-- /top footer -->
 
-		<!-- SECTION -->
-		    <div class="form-box">
-				<div class="button-box">
-					<div id="btn"></div>
-					<button type="button" class="toggle-btn" onclick="login()">Iniciar</button>
-					<button type="button" class="toggle-btn" onclick="register()">Registarse</button>
-				</div>
-				<form id="login" class="input-group">
-					<img class="avatar" src="img/avatar.png" alt="">
-					<input type="email" class="input-field" placeholder="Correo electronico" required>
-					<input type="password" class="input-field" placeholder="Contraseña" required>
-					<a class="olv-con" href="index.html">¿Olvidó su contraseña?</a>
-					<button type="submit" class="submit-btn">Iniciar</button>
-				</form>
-
-					<form id="register" class="input-group-r">
-						<input type="text" class="input-field" placeholder="Nombre" required>
-						<input type="text" class="input-field" placeholder="Apellido" required>
-						<input type="text" class="input-field" placeholder="Rut" required>
-						<input type="email" class="input-field" placeholder="Correo electronico" required>
-						<input type="password" class="input-field" placeholder="Contraseña" required>
-						<input type="tel" class="input-field" placeholder="Telefono" required>
-						<input type="" class="input-field" placeholder="Dirección + Número" required>
-
-						<div class="form-check">
-							<label class="form-check-label" for="casa_depto">
-								<input type="radio" class="form-check-input" name="casa_depto" id="casa_depto" value="Casa" checked> Casa
-							</label>
-						</div>
-						<div class="form-check">
-							<label class="form-check-label" for="casa_depto">
-								<input type="radio" class="form-check-input" name="casa_depto" id="casa_depto" value="Depto"> Departamento
-							</label>
-						</div>
-
-						<label id="ciudad-lbl" for="ciudad">Seleccione su ciudad</label>
-						<select name="ciudad" id="ciudad" class="form-control">
-							<option value="1">Santiago</option>
-							<option value="2">Talca</option>
-							<option value="3">Rancagua</option>
-							<option value="4">Concepcion</option>
-						</select>
-
-						<label id="ciudad-lbl" for="ciudad">Seleccione su comuna</label>
-						<select name="ciudad" id="ciudad" class="form-control">
-							<option value="1">Santiago</option>
-							<option value="2">Talca</option>
-							<option value="3">Rancagua</option>
-							<option value="4">Concepcion</option>
-						</select>
-
-						<button type="submit" class="submit-btn-r">Registrarse</button>
-					</form>
-			</div>
-
-		 <script>
-			 var x = document.getElementById("login");
-			 var y = document.getElementById("register");
-			 var z = document.getElementById("btn");
-
-			 function register(){
-				 x.style.left ="-400px";
-				 y.style.left ="50px";
-				 z.style.left ="190px";
-			 }
-
-			 function login(){
-				 x.style.left ="50px";
-				 y.style.left ="-450px";
-				 z.style.left ="72px";
-			 }
-		 </script>
-
-		<!-- /SECTION -->
-
-		<!-- FOOTER -->
-		<footer id="footer">
-			<!-- top footer -->
-			<div class="section">
-				<!-- container -->
-				<div class="container">
-					<!-- row -->
-					<div class="row">
-						<div class="col-md-3 col-xs-6">
-							<div class="footer">
-								<h3 class="footer-title">Conócenos</h3>
-								<p>Somos una tienda dedicada a venta de monitores en, su mayoria gamer, procurando la calidad y variedad de estos.</p>
-								<ul class="footer-links">
-									<li><a href="#"><i class="fa fa-map-marker"></i>Padre Mariano 356, Providencia</a></li>
-									<li><a href="#"><i class="fa fa-phone"></i>+569-8131-9581</a></li>
-									<li><a href="#"><i class="fa fa-envelope-o"></i>TechnoScreen@gmail.cl</a></li>
-								</ul>
-							</div>
-						</div>
-
-						<div class="clearfix visible-xs"></div>
-
-						<div class="col-md-3 col-xs-6">
-							<div class="footer">
-								<a href="about us.html"><h3 class="footer-title">Información</h3></a>
-								<ul class="footer-links">
-									<li><a href="about us.html#nosotros">Acerca de nosotros</a></li>
-									<li><a href="about us.html#contactos">Contáctanos</a></li>
-									<li><a href="about us.html#politicas">Privacidad y politicas</a></li>
-									<li><a href="about us.html#terminos">Terminos y condiciones</a></li>
-								</ul>
-							</div>
-						</div>
-
-						<div class="col-md-3 col-xs-6">
-							<div class="footer">
-								<h3 class="footer-title">Serviciós</h3>
-								<ul class="footer-links">
-									<li><a href="#">Mi Cuenta</a></li>
-									<li><a href="#">Mi Carrito</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<!-- /row -->
-				</div>
-				<!-- /container -->
-			</div>
-			<!-- /top footer -->
-
-			<!-- bottom footer -->
-			<div id="bottom-footer" class="section">
-				<div class="container">
-					<!-- row -->
-					<div class="row">
-						<div class="col-md-12 text-center">
-							<ul class="footer-payments">
-								<li><a href="#"><i class="fa fa-cc-visa"></i></a></li>
-								<li><a href="#"><i class="fa fa-credit-card"></i></a></li>
-								<li><a href="#"><i class="fa fa-cc-paypal"></i></a></li>
-								<li><a href="#"><i class="fa fa-cc-mastercard"></i></a></li>
-								<li><a href="#"><i class="fa fa-cc-discover"></i></a></li>
-								<li><a href="#"><i class="fa fa-cc-amex"></i></a></li>
-							</ul>
-							<span class="copyright">
-								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-								Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved</a>
+		<!-- bottom footer -->
+		<div id="bottom-footer" class="section">
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<ul class="footer-payments">
+							<li><a href="#"><i class="fa fa-cc-visa"></i></a></li>
+							<li><a href="#"><i class="fa fa-credit-card"></i></a></li>
+							<li><a href="#"><i class="fa fa-cc-paypal"></i></a></li>
+							<li><a href="#"><i class="fa fa-cc-mastercard"></i></a></li>
+							<li><a href="#"><i class="fa fa-cc-discover"></i></a></li>
+							<li><a href="#"><i class="fa fa-cc-amex"></i></a></li>
+						</ul>
+						<span class="copyright">
 							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-							</span>
-						</div>
+							Copyright &copy;
+							<script>document.write(new Date().getFullYear());</script> All rights reserved</a>
+							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						</span>
 					</div>
-						<!-- /row -->
 				</div>
-				<!-- /container -->
+				<!-- /row -->
 			</div>
-			<!-- /bottom footer -->
-		</footer>
-		<!-- /FOOTER -->
+			<!-- /container -->
+		</div>
+		<!-- /bottom footer -->
+	</footer>
+	<!-- /FOOTER -->
 
-		<!-- jQuery Plugins -->
-		<script src="js/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/slick.min.js"></script>
-		<script src="js/nouislider.min.js"></script>
-		<script src="js/jquery.zoom.min.js"></script>
-		<script src="js/main.js"></script>
+	<!-- jQuery Plugins -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/slick.min.js"></script>
+	<script src="js/nouislider.min.js"></script>
+	<script src="js/jquery.zoom.min.js"></script>
+	<script src="js/main.js"></script>
 
-	</body>
+</body>
+
 </html>

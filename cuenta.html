@@ -54,16 +54,34 @@
 					mensaje = mensaje + "El campo rut no debe estar vacío";
 				}
 
-				if ($("#Correo").val().trim().length == 0) {
+				if ($("#CorreoRe").val().trim().length == 0) {
 					mensaje = mensaje + "El correo electronico no puede estar vacío";
 				}
 
-				if ($("#Contraseña").val().trim().length == 0) {
+				if ($("#ContraseñaRe").val().trim().length == 0) {
 					mensaje = mensaje + "El campo contraseña no debe estar vacío";
 				}
 
 				if (isNaN($("#Telefono").val())) {
 					mensaje = mensaje + "El telefono solo pueden ser numeros";
+				}
+
+				if (mensaje != "Por favor revisar los siguientes detalles en el formulario") {
+					$("#error").html(mensaje);
+					$("#error").show();
+					event.preventDefault();
+				}
+			})
+
+			$("#login").submit(function () {
+				var mensaje = "Por favor revisar los siguientes detalles en el formulario";
+
+				if ($("#Correo").val().trim().length == 0) {
+					mensaje = mensaje + " El correo electronico no puede estar vacío";
+				}
+
+				if ($("#Contraseña").val().trim().length == 0) {
+					mensaje = mensaje + " El campo contraseña no debe estar vacío";
 				}
 
 				if (mensaje != "Por favor revisar los siguientes detalles en el formulario") {
@@ -179,18 +197,21 @@
 		</div>
 		<form id="login" class="input-group">
 			<img class="avatar" src="img/avatar.png" alt="">
-			<input type="email" class="input-field" placeholder="Correo electronico" required>
-			<input type="password" class="input-field" placeholder="Contraseña" required>
+			<input type="email" class="input-field" placeholder="Correo electronico" id="Correo">
+			<input type="password" class="input-field" placeholder="Contraseña" id="Contraseña">
 			<a class="olv-con" href="index.html">¿Olvidó su contraseña?</a>
-			<button type="submit" class="submit-btn">Iniciar</button>
+			<div class="form-group">
+				<div id="error" class="alert alert-danger"></div>
+				<button type="submit" class="submit-btn">Iniciar</button>
+			</div>
 		</form>
 
 		<form action="index.html" method="GET" id="register" class="input-group-r">
 			<input type="text" class="input-field" placeholder="Nombre" id="Nombre">
 			<input type="text" class="input-field" placeholder="Apellido" id="Apellido">
 			<input type="text" class="input-field" placeholder="Rut" id="Rut">
-			<input type="email" class="input-field" placeholder="Correo electronico" id="Correo">
-			<input type="password" class="input-field" placeholder="Contraseña" id="Contraseña">
+			<input type="email" class="input-field" placeholder="Correo electronico" id="CorreoRe">
+			<input type="password" class="input-field" placeholder="Contraseña" id="ContraseñaRe">
 			<input type="tel" class="input-field" placeholder="Telefono" id="Telefono">
 			<input type="" class="input-field" placeholder="Dirección + Número" required>
 

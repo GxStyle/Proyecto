@@ -480,8 +480,9 @@ textarea.input {
 }
 
 .header-search form .input {
-  width: calc(100% - 260px);
+  width: 60%;
   margin-right: -4px;
+  border-radius: 40px 0px 0px 40px;
 }
 
 .header-search form .search-btn {
@@ -532,7 +533,6 @@ textarea.input {
   float: left;
   padding-bottom: 10px;
   padding-top: 10px;
-  padding-left: 20px;
   font-weight:bold;
   color: white;
   font-size: 25px
@@ -544,7 +544,6 @@ textarea.input {
 
 .header-sub {
   float: left;
-  padding-right: 10px;
   font-weight:bold;
   color: white;
   font-size: 12px
@@ -2272,8 +2271,19 @@ textarea.input {
     float: none !important;
     margin-top: 5px;
   }
-  .header-logo {
+  .header-logo  {
     float: none;
+    text-align: center;
+  }
+  .header-nombre {
+    float: none;
+    text-align: center;
+  }
+  .header-sub {
+    float: none;
+    text-align: center;
+  }
+  .header-search  {
     text-align: center;
   }
   .header-logo .logo {

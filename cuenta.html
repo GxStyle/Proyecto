@@ -35,64 +35,71 @@
 	<link type="text/css" rel="stylesheet" href="css/style.css" />
 
 	<script type="text/javascript">
-		$(document).ready(function () {
-			$("#error").hide(); //ocultando el div de los errores
+		$(document).ready(function() {
+			$("#errorr").hide(); //ocultando el div de los errores
 
 			//indicar que las validaciones del formulario se ejecutaran solo cuando se presione submit
 			$("#register").submit(function () {
 				var mensaje = "Por favor revisar los siguientes detalles en el formulario";
 
 				if ($("#Nombre").val().trim().length == 0) {
-					mensaje = mensaje + "El campo nombre no debe estar vacío";
+					mensaje = mensaje + " El campo nombre no debe estar vacío";
 				}
 
 				if ($("#Apellido").val().trim().length == 0) {
-					mensaje = mensaje + "El campo apellido no debe estar vacío";
+					mensaje = mensaje + " El campo apellido no debe estar vacío";
 				}
 
 				if ($("#Rut").val().trim().length == 0) {
-					mensaje = mensaje + "El campo rut no debe estar vacío";
+					mensaje = mensaje + " El campo rut no debe estar vacío";
 				}
 
 				if ($("#CorreoRe").val().trim().length == 0) {
-					mensaje = mensaje + "El correo electronico no puede estar vacío";
-				}
-
-				if ($("#ContraseñaRe").val().trim().length == 0) {
-					mensaje = mensaje + "El campo contraseña no debe estar vacío";
-				}
-
-				if (isNaN($("#Telefono").val())) {
-					mensaje = mensaje + "El telefono solo pueden ser numeros";
-				}
-
-				if (mensaje != "Por favor revisar los siguientes detalles en el formulario") {
-					$("#error").html(mensaje);
-					$("#error").show();
-					event.preventDefault();
-				}
-			})
-
-			$("#login").submit(function () {
-				var mensaje = "Por favor revisar los siguientes detalles en el formulario";
-
-				if ($("#Correo").val().trim().length == 0) {
 					mensaje = mensaje + " El correo electronico no puede estar vacío";
 				}
 
-				if ($("#Contraseña").val().trim().length == 0) {
+				if ($("#ContraseñaRe").val().trim().length == 0) {
 					mensaje = mensaje + " El campo contraseña no debe estar vacío";
 				}
 
-				if (mensaje != "Por favor revisar los siguientes detalles en el formulario") {
-					$("#error").html(mensaje);
-					$("#error").show();
+				if (isNaN($("#Telefono").val())) {
+					mensaje = mensaje + " El telefono solo pueden ser numeros";
+				}
+
+				if (mensaje != " Por favor revisar los siguientes detalles en el formulario") {
+					$("#errorr").html(mensaje);
+					$("#errorr").show();
 					event.preventDefault();
 				}
 			})
 		});
-
 	</script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#errorl").hide(); //ocultando el div de los errores
+
+		//indicar que las validaciones del formulario se ejecutaran solo cuando se presione submit
+		$("#login").submit(function () {
+			var mensaje = "Por favor revisar los siguientes detalles en el formulario";
+
+			if ($("#Correo").val().trim().length == 0) {
+				mensaje = mensaje + "<br> El correo electronico no puede estar vacío";
+			}
+
+			if ($("#Contraseña").val().trim().length == 0) {
+				mensaje = mensaje + "<br> El campo contraseña no debe estar vacío";
+			}
+
+			if (mensaje != " Por favor revisar los siguientes detalles en el formulario") {
+				$("#errorl").html(mensaje);
+				$("#errorl").show();
+				event.preventDefault();
+			}
+		})
+	});
+
+</script>
 
 </head>
 
@@ -215,7 +222,7 @@
 			<input type="password" class="input-field" placeholder="Contraseña" id="Contraseña">
 			<a class="olv-con" href="index.html">¿Olvidó su contraseña?</a>
 			<div class="form-group">
-				<div id="error" class="alert alert-danger"></div>
+				<div id="errorl" class="alert alert-danger"></div>
 				<button type="submit" class="submit-btn">Iniciar</button>
 			</div>
 		</form>
@@ -259,7 +266,7 @@
 			</select>
 
 			<div class="form-group">
-				<div id="error" class="alert alert-danger"></div>
+				<div id="errorr" class="alert alert-danger"></div>
 				<button type="submit" class="submit-btn-r">Registrarse</button>
 			</div>
 		</form>

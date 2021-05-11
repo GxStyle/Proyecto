@@ -1062,8 +1062,9 @@ textarea.input {
 
 .Form-textbox{
   border-radius: 18px;
-  padding: 7px 15px 5px;
-  width: 25%;
+  padding: 8px 15px 8px;
+  margin-top: 3%;
+  width: 300px;
   border: 1px solid #000;
   text-align: center;
   background-color: #1E1F29;
@@ -1071,12 +1072,12 @@ textarea.input {
 }
 
 .passp{
-  margin-top: 10%;
+  margin-top: 5%;
   text-align: center;
 }
 
 .submit-btnp {
-  width:15%;
+  width:150px;
   padding: 10px 30px;
   cursor: pointer;
   display: block;
@@ -1091,10 +1092,10 @@ textarea.input {
 }
 
 .PageHeader {
-  font-size: 28px;
+  font-size: 50px;
   font-weight: 200;
   color: #66757f;
-  margin-bottom: 36px;
+  margin-bottom: 3%;
   font-weight: bold;
   color: #14171a;
 }
@@ -1115,6 +1116,14 @@ textarea.input {
   margin: 5% auto;
 }
 
+.alertap{
+  padding: 15px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  width: 300px;
+  position:relative;
+  margin: 5% auto;
+}
 
 .alertar {
   padding: 15px;
@@ -2330,7 +2339,7 @@ textarea.input {
     float: none !important;
   }
   .Form-textbox{
-    width: 40%;
+    width: 250px;
   }
   #top-header .header-links.pull-right {
     float: none !important;

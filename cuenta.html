@@ -36,7 +36,7 @@
 	<link type="text/css" rel="stylesheet" href="css/style.css" />
 
 	<script type="text/javascript">
-		$(document).ready(function() {
+		$(document).ready(function () {
 			$("#errorr").hide(); //ocultando el div de los errores
 
 			//indicar que las validaciones del formulario se ejecutaran solo cuando se presione submit
@@ -67,7 +67,7 @@
 					mensaje = mensaje + " El telefono solo pueden ser numeros";
 				}
 
-				if (mensaje != " Por favor revisar los siguientes detalles en el formulario") {
+				if (mensaje != "Por favor revisar los siguientes detalles en el formulario") {
 					$("#errorr").html(mensaje);
 					$("#errorr").show();
 					event.preventDefault();
@@ -76,31 +76,31 @@
 		});
 	</script>
 
-<script type="text/javascript">
-	$(document).ready(function() {
-		$("#errorl").hide(); //ocultando el div de los errores
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$("#errorl").hide(); //ocultando el div de los errores
 
-		//indicar que las validaciones del formulario se ejecutaran solo cuando se presione submit
-		$("#login").submit(function () {
-			var mensaje = "Por favor revisar los siguientes detalles en el formulario";
+			//indicar que las validaciones del formulario se ejecutaran solo cuando se presione submit
+			$("#login").submit(function () {
+				var mensaje = "Por favor revisar los siguientes detalles en el formulario";
 
-			if ($("#Correo").val().trim().length == 0) {
-				mensaje = mensaje + "<br> El correo electronico no puede estar vacío";
-			}
+				if ($("#Correo").val().trim().length == 0) {
+					mensaje = mensaje + "<br> El correo electronico no puede estar vacío";
+				}
 
-			if ($("#Contraseña").val().trim().length == 0) {
-				mensaje = mensaje + "<br> El campo contraseña no debe estar vacío";
-			}
+				if ($("#Contraseña").val().trim().length == 0) {
+					mensaje = mensaje + "<br> El campo contraseña no debe estar vacío";
+				}
 
-			if (mensaje != " Por favor revisar los siguientes detalles en el formulario") {
-				$("#errorl").html(mensaje);
-				$("#errorl").show();
-				event.preventDefault();
-			}
-		})
-	});
+				if (mensaje != "Por favor revisar los siguientes detalles en el formulario") {
+					$("#errorl").html(mensaje);
+					$("#errorl").show();
+					event.preventDefault();
+				}
+			})
+		});
 
-</script>
+	</script>
 
 </head>
 
@@ -128,21 +128,21 @@
 			<div class="row">
 				<!-- LOGO -->
 				<div class="col-md-2">
-				<div class="header-logo">
-					<a href="#" class="logo">
-						<a href="index.html"><img src="./img/logo.png" alt=""></a>
-					</a>
-				</div>
+					<div class="header-logo">
+						<a href="#" class="logo">
+							<a href="index.html"><img src="./img/logo.png" alt=""></a>
+						</a>
+					</div>
 				</div>
 				<!-- NOMBRE -->
 				<div class="col-md-3">
-				<div class="header-nombre">
-					<p>TechnoScreen</p>
+					<div class="header-nombre">
+						<p>TechnoScreen</p>
 
-					<div class="header-sub">
-						<p>La vida con más color</p>
+						<div class="header-sub">
+							<p>La vida con más color</p>
+						</div>
 					</div>
-				</div>
 				</div>
 
 
@@ -223,11 +223,11 @@
 			<input type="password" class="input-field" placeholder="Contraseña" id="Contraseña">
 			<a class="olv-con" href="password_reset.html">¿Olvidó su contraseña?</a>
 			<div class="form-group">
-				<div id="errorl" class="alert alert-danger"></div>
 				<button type="submit" class="submit-btn">Iniciar</button>
 			</div>
 			<div class="g-recaptcha" data-sitekey="6LfWDs8aAAAAAKWY-CdasNOsjcRYRS7V3FjtV-38"></div>
 		</form>
+
 
 		<form action="index.html" method="POST" id="register" class="input-group-r">
 			<input type="text" class="input-field" placeholder="Nombre" id="Nombre">
@@ -268,27 +268,39 @@
 			</select>
 
 			<div class="form-group">
-				<div id="errorr" class="alert alert-danger"></div>
 				<button type="submit" class="submit-btn-r">Registrarse</button>
 			</div>
 		</form>
 	</div>
-
+	<div class="section">
+		<div class="container">
+			<div class="row">
+				<div id="errorr" class="alertar alert-danger"></div>
+				<div id="errorl" class="alertal alert-danger"></div>
+			</div>
+		</div>
+	</div>
 	<script>
 		var x = document.getElementById("login");
 		var y = document.getElementById("register");
 		var z = document.getElementById("btn");
+		var a = document.getElementById("errorr");
+		var b = document.getElementById("errorl");
 
 		function register() {
 			x.style.left = "-400px";
 			y.style.left = "50px";
 			z.style.left = "190px";
+			a.style.left = "0";
+			b.style.left = "-2000px";
 		}
 
 		function login() {
 			x.style.left = "50px";
 			y.style.left = "-450px";
 			z.style.left = "72px";
+			b.style.left = "0";
+			a.style.left = "-2000px";
 		}
 	</script>
 

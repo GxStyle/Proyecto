@@ -1106,6 +1106,25 @@ textarea.input {
 	Widget product
 \*----------------------------*/
 
+.alertal {
+  padding: 15px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  width: 300px;
+  position:relative;
+  margin: 5% auto;
+}
+
+
+.alertar {
+  padding: 15px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  width: 300px;
+  position:relative;
+  margin: 5% auto;
+}
+
 .product-widget {
   position: relative;
 }

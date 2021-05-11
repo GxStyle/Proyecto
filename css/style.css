@@ -600,6 +600,7 @@ textarea.input {
 .header-ctn .menu-toggle {
   display: none;
 }
+
 /*=========================================================
 	03 -> Navigation
 ===========================================================*/
@@ -1059,6 +1060,48 @@ textarea.input {
   visibility: visible;
 }
 
+.Form-textbox{
+  border-radius: 18px;
+  padding: 7px 15px 5px;
+  width: 25%;
+  border: 1px solid #000;
+  text-align: center;
+  background-color: #1E1F29;
+  color: #FFF;
+}
+
+.passp{
+  margin-top: 10%;
+  text-align: center;
+}
+
+.submit-btnp {
+  width:15%;
+  padding: 10px 30px;
+  cursor: pointer;
+  display: block;
+  margin-top: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 0;
+  outline: none;
+  background-color: #D10024;
+  border-radius: 30px;
+  color: #FFF;
+}
+
+.PageHeader {
+  font-size: 28px;
+  font-weight: 200;
+  color: #66757f;
+  margin-bottom: 36px;
+  font-weight: bold;
+  color: #14171a;
+}
+
+.Form-textbox::placeholder{
+  color: #FFF;
+}
 /*----------------------------*\
 	Widget product
 \*----------------------------*/
@@ -2266,6 +2309,9 @@ textarea.input {
 @media only screen and (max-width: 991px) {
   #top-header .header-links.pull-left {
     float: none !important;
+  }
+  .Form-textbox{
+    width: 40%;
   }
   #top-header .header-links.pull-right {
     float: none !important;

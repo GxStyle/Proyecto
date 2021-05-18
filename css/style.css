@@ -456,6 +456,7 @@ textarea.input {
 
 .header-logo {
   float: left;
+  margin-top: 3%;
 }
 
 .header-logo .logo img {
@@ -1076,6 +1077,12 @@ textarea.input {
   text-align: center;
 }
 
+#correop{
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+
 .submit-btnp {
   width:150px;
   padding: 10px 30px;
@@ -1092,12 +1099,23 @@ textarea.input {
 }
 
 .PageHeader {
-  font-size: 50px;
+  font-size: 45px;
   font-weight: 200;
   color: #66757f;
-  margin-bottom: 3%;
+  margin-bottom: 15%;
   font-weight: bold;
-  color: #14171a;
+  color: #fff;
+  text-align: center;
+}
+
+.PageSub{
+  font-size: 20px;
+  font-weight: 200;
+  color: #66757f;
+  margin-bottom: 20%;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
 }
 
 .Form-textbox::placeholder{
@@ -1898,7 +1916,7 @@ textarea.input {
 ===========================================================*/
 .form-box {
   width: 380px;
-  height: 750px;
+  height: 800px;
   position:relative;
   margin: 5% auto;
   background: #1E1F29;
@@ -1945,6 +1963,13 @@ textarea.input {
   transition: .5s;
 }
 
+.input-groupp{
+  top: 90px;
+  position: absolute;
+  width: 280px;
+  transition: .5s;
+}
+
 .input-group-r{
   top: 90px;
   position: absolute;
@@ -1977,6 +2002,7 @@ textarea.input {
   margin-top: 20%;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 60px;
   border: 0;
   outline: none;
   background-color: #D10024;
@@ -2000,6 +2026,10 @@ textarea.input {
 }
 
 #login{
+  left: 50px;
+}
+
+#pass{
   left: 50px;
 }
 #register{
@@ -2026,6 +2056,9 @@ textarea.input {
 .form-check{
   margin-top: 5px;
   color: #FFF;
+}
+#casa_deptod{
+  margin-left: 70px;
 }
 
 .olv-con{

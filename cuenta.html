@@ -236,7 +236,7 @@
 						<button type="button" class="toggle-btn" onclick="login()">Iniciar</button>
 						<button type="button" class="toggle-btn" onclick="register()">Registarse</button>
 					</div>
-					<form action="index.html" method="POST" id="login" class="input-group">
+					<form action="index.html" method="POST" id="login" class="input-groupp">
 						<img class="avatar" src="img/avatar.png" alt="">
 						<input type="email" class="input-field" placeholder="Correo electronico" id="Correo">
 						<input type="password" class="input-field" placeholder="Contraseña" id="Contraseña">
@@ -262,16 +262,13 @@
 								<input type="radio" class="form-check-input" name="casa_depto" id="casa_depto"
 									value="Casa" checked>
 								Casa
+								<label class="form-check-label" for="casa_depto">
+									<input type="radio" class="form-check-input" name="casa_depto" id="casa_deptod"
+										value="Depto">
+									Departamento
+								</label>
 							</label>
 						</div>
-						<div class="form-check">
-							<label class="form-check-label" for="casa_depto">
-								<input type="radio" class="form-check-input" name="casa_depto" id="casa_depto"
-									value="Depto">
-								Departamento
-							</label>
-						</div>
-
 						<label id="ciudad-lbl" for="ciudad">Seleccione su ciudad</label>
 						<select name="ciudad" id="ciudad" class="form-control">
 							<option value="1">Santiago</option>
@@ -335,7 +332,7 @@
 			<div class="container">
 				<!-- row -->
 				<div class="row">
-					<div class="col-md-4 col-xs-6">
+					<div class="col-md-4 col-xs-4">
 						<div class="footer">
 							<h3 class="footer-title">Conócenos</h3>
 							<p>Somos una tienda dedicada a venta de monitores en, su mayoria gamer, procurando la
@@ -348,7 +345,7 @@
 						</div>
 					</div>
 
-					<div class="col-md-4 col-xs-6">
+					<div class="col-md-4 col-xs-4">
 						<div class="footer">
 							<a href="about us.html">
 								<h3 class="footer-title">Información</h3>
@@ -362,7 +359,7 @@
 						</div>
 					</div>
 
-					<div class="col-md-4 col-xs-6">
+					<div class="col-md-4 col-xs-4">
 						<div class="footer">
 							<h3 class="footer-title">Serviciós</h3>
 							<ul class="footer-links">

@@ -20,9 +20,15 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-	<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/jquery.validate.js"></script>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
+
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+		integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/jquery.validate.js"></script>
 
 	<!-- Slick -->
 	<link type="text/css" rel="stylesheet" href="css/slick.css" />
@@ -37,96 +43,72 @@
 	<!-- Custom stlylesheet -->
 	<link type="text/css" rel="stylesheet" href="css/style.css" />
 
-	<script>$.validator.setDefaults( {
-		submitHandler: function () {
-		   alert( "submitted!" );
-		}
-	 });
-	 
-	 
-	 $(document).ready(function(){
-		$('#signupForm').validate({
-		   rules: {
-			  Nombre: {
-				 required: true
-			  },
-			  Apellido: {
-				 required: true
-			  },
-			  Rut: {
-				 required: true,
-				 minlength: 5
-			  },
-			  CorreoRe: {
-				 required: true,
-				 email: true
-			  },
-			  ContraseñaRe: {
-				 required: true,
-			  },
-			  agree: "required"
-		   },
-		   messages: {           
-			  Nombre: {
-				 required: "Por favor ingresa tu nombre"
-			  },
-			  Apellido: {
-				 required: "Por favor ingresa tu apellido completo"
-			  },
-			  Rut: {
-				 required: "Por favor ingresa tu rut completo"
-			  },
-			  CorreoRe: "Por favor ingresa un correo válido",
-			  ContraseñaRe: {
-				 required: "Por favor ingresa una contraseña"
-			  },
-		   },
-		   errorElement: "em",
-		   errorPlacement: function (error, element) {
-			  // Add the `help-block` class to the error element
-			  error.addClass("help-block");
-	 
-			  if (element.prop( "type" ) === "checkbox") {
-				 error.insertAfter(element.parent("label") );
-			  } else {
-				 error.insertAfter(element);
-			  }
-		   },
-		   highlight: function ( element, errorClass, validClass ) {
-			  $( element ).parents( ".col-sm-10" ).addClass( "has-error" ).removeClass( "has-success" );
-		   },
-		   unhighlight: function (element, errorClass, validClass) {
-			  $( element ).parents( ".col-sm-10" ).addClass( "has-success" ).removeClass( "has-error" );  
-		   } 
-		});
-	 });
-	</script>
-
 	<script type="text/javascript">
 		$(document).ready(function () {
-			$("#errorl").hide(); //ocultando el div de los errores
+			$("#errorr").hide(); //ocultando el div de los errores
 
 			//indicar que las validaciones del formulario se ejecutaran solo cuando se presione submit
-			$("#login").submit(function () {
-				var mensaje = "Por favor revisar los siguientes detalles en el formulario";
+			$("#register").submit(function () {
+				var mensaje = "Por favor revisar los siguientes detalles en el formulario:";
 
-				if ($("#Correo").val().trim().length == 0) {
-					mensaje = mensaje + "<br> El correo electronico no puede estar vacío";
+				if ($("#Nombre").val().trim().length == 0) {
+					mensaje = mensaje + "<br>El campo nombre no debe estar vacío.";
 				}
 
-				if ($("#Contraseña").val().trim().length == 0) {
-					mensaje = mensaje + "<br> El campo contraseña no debe estar vacío";
+				if ($("#Apellido").val().trim().length == 0) {
+					mensaje = mensaje + "<br>El campo apellido no debe estar vacío.";
 				}
 
-				if (mensaje != "Por favor revisar los siguientes detalles en el formulario") {
-					$("#errorl").html(mensaje);
-					$("#errorl").show();
+				if ($("#Rut").val().trim().length == 0) {
+					mensaje = mensaje + "<br>El campo rut no debe estar vacío.";
+				}
+
+				if ($("#CorreoRe").val().trim().length == 0) {
+					mensaje = mensaje + "<br>El correo electronico no puede estar vacío.";
+				}
+
+				if ($("#ContraseñaRe").val().trim().length == 0) {
+					mensaje = mensaje + "<br>El campo contraseña no debe estar vacío.";
+				}
+
+				if (isNaN($("#Telefono").val())) {
+					mensaje = mensaje + "<br>El telefono solo pueden ser numeros.";
+				}
+
+				if (mensaje != "Por favor revisar los siguientes detalles en el formulario:") {
+					$("#errorr").html(mensaje);
+					$("#errorr").show();
 					event.preventDefault();
 				}
-			})
-		});
-
+			});
+	 });
 	</script>
+
+<script type="text/javascript">
+	$(document).ready(function () {
+		$("#errorl").hide(); //ocultando el div de los errores
+
+		//indicar que las validaciones del formulario se ejecutaran solo cuando se presione submit
+		$("#login").submit(function () {
+			var mensaje = "Por favor revisar los siguientes detalles en el formulario:";
+
+			if ($("#CorreoRe").val().trim().length == 0) {
+				mensaje = mensaje + "<br>El correo electronico no puede estar vacío.";
+			}
+
+			if ($("#ContraseñaRe").val().trim().length == 0) {
+				mensaje = mensaje + "<br>El campo contraseña no debe estar vacío.";
+			}
+
+			if (mensaje != "Por favor revisar los siguientes detalles en el formulario:") {
+				$("#errorl").html(mensaje);
+				$("#errorl").show();
+				event.preventDefault();
+			}
+		});
+ });
+</script>
+
 
 </head>
 
@@ -250,17 +232,24 @@
 						<button type="button" class="toggle-btn" onclick="login()">Iniciar</button>
 						<button type="button" class="toggle-btn" onclick="register()">Registarse</button>
 					</div>
-					<form action="index.html" method="POST" id="login" class="input-groupp">
+					<form action="" method="POST" id="login" class="input-groupp">
+
 						<img class="avatar" src="img/avatar.png" alt="">
 						<input type="email" class="input-field" placeholder="Correo electronico" id="Correo">
 						<input type="password" class="input-field" placeholder="Contraseña" id="Contraseña">
 						<a class="olv-con" href="password_reset.html">¿Olvidó su contraseña?</a>
+						<div class="alert-box">
+							<div id="errorl" class="alertar alert-d"></div>
+						</div>
 						<div class="form-group">
 							<button type="submit" class="submit-btn">Iniciar</button>
 						</div>
+
+						
 					</form>
 
-					<form action="index.html" method="POST" id="register" class="input-group-r">
+					<form action="" method="POST" id="register" class="input-group-r">
+
 						<input type="text" class="input-field" placeholder="Nombre" id="Nombre">
 						<input type="text" class="input-field" placeholder="Apellido" id="Apellido">
 						<input type="text" class="input-field" placeholder="Rut" id="Rut">
@@ -268,7 +257,6 @@
 						<input type="password" class="input-field" placeholder="Contraseña" id="ContraseñaRe">
 						<input type="tel" class="input-field" placeholder="Telefono" id="Telefono">
 						<input type="" class="input-field" placeholder="Dirección + Número" id="Direccion">
-
 						<div class="form-check">
 							<label class="form-check-label" for="casa_depto">
 								<input type="radio" class="form-check-input" name="casa_depto" id="casa_depto"
@@ -288,7 +276,6 @@
 							<option value="3">Rancagua</option>
 							<option value="4">Concepcion</option>
 						</select>
-
 						<label id="ciudad-lbl" for="ciudad">Seleccione su comuna</label>
 						<select name="ciudad" id="ciudad" class="form-control">
 							<option value="1">Santiago</option>
@@ -296,43 +283,45 @@
 							<option value="3">Rancagua</option>
 							<option value="4">Concepcion</option>
 						</select>
-
+						<div class="alert-box">
+							<div id="errorr" class="alertar alert-d"></div>
+						</div>
 						<div class="form-group">
 							<button type="submit" class="submit-btn-r">Registrarse</button>
 						</div>
+						
 					</form>
-
-				</div>
-				<div class="alert-box">
-					<div id="errorr" class="alertar alert-danger"></div>
-					<div id="errorl" class="alertal alert-danger"></div>
 				</div>
 			</div>
 		</div>
 	</div>
 	<script>
-		var x = document.getElementById("login");
-		var y = document.getElementById("register");
-		var z = document.getElementById("btn");
-		var a = document.getElementById("errorr");
-		var b = document.getElementById("errorl");
+			 var x = document.getElementById("login");
+			 var y = document.getElementById("register");
+			 var z = document.getElementById("btn");
+			 var a = document.getElementById("errorr");
+			 var b = document.getElementById("errorl");
 
-		function register() {
-			x.style.left = "-400px";
-			y.style.left = "50px";
-			z.style.left = "190px";
-			a.style.left = "0";
-			b.style.left = "-400px";
-		}
+			 function register() {
+				 x.style.left = "-400px";
+				 y.style.left = "50px";
+				 z.style.left = "190px";
+				 a.style.left = "0";
+				 b.style.left = "-400px";
+			 }
 
-		function login() {
-			x.style.left = "50px";
-			y.style.left = "-450px";
-			z.style.left = "72px";
-			b.style.left = "0";
-			a.style.left = "-450px";
-		}
+			 function login() {
+				 x.style.left = "50px";
+				 y.style.left = "-450px";
+				 z.style.left = "72px";
+				 b.style.left = "0";
+				 b.style.bottom = "1000";
+				 a.style.left = "-450px";
+				 a.style.top = "0px";
+			 }
 	</script>
+
+
 
 	<!-- /SECTION -->
 
@@ -424,6 +413,7 @@
 	<script src="js/nouislider.min.js"></script>
 	<script src="js/jquery.zoom.min.js"></script>
 	<script src="js/main.js"></script>
+	
 
 </body>
 

@@ -1145,9 +1145,8 @@ textarea.input {
 
 .alertar {
   padding: 15px;
-  border: 1px solid transparent;
   border-radius: 4px;
-  width: 300px;
+  width: 305px;
   position:relative;
   margin: 5% auto;
 }
@@ -1916,7 +1915,7 @@ textarea.input {
 ===========================================================*/
 .form-box {
   width: 380px;
-  height: 800px;
+  height: 920px;
   position:relative;
   margin: 5% auto;
   background: #1E1F29;
@@ -1926,10 +1925,19 @@ textarea.input {
 
 .avatar{
   position: relative;
-  margin-left: 25%;
-  margin-bottom: 15%;
+    margin-left: 25%;
+    margin-bottom: 50%;
+    margin-top: 30%;
 }
-
+.alert-box{
+  margin-top: 5%;
+}
+.alert-d {
+  color: #a94442;
+  font-weight:500;
+  background-color: #f2dede;
+  border-color: #bce8f1;
+}
 .button-box{
   width: 236.27px;
   margin: 25px auto;
@@ -2015,7 +2023,7 @@ textarea.input {
   padding: 10px 30px;
   cursor: pointer;
   display: block;
-  margin-top: 15%;
+  margin-top: 5%;
   margin-left: auto;
   margin-right: auto;
   border: 0;
@@ -2371,6 +2379,9 @@ textarea.input {
   #top-header .header-links.pull-left {
     float: none !important;
   }
+  .form-box {
+    width: 380px;
+  }
   .Form-textbox{
     width: 250px;
   }
@@ -2430,5 +2441,23 @@ textarea.input {
   .store-pagination {
     float: none;
     margin-top: 10px;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .form-box {
+    width: 360px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .form-box {
+    width: 320px;
+  }
+}
+
+@media only screen and (max-width: 280px) {
+  .form-box {
+    width: 280px;
   }
 }

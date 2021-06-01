@@ -1923,6 +1923,11 @@ textarea.input {
   overflow: hidden;
 }
 
+#btncompra{
+  width: 250px;
+  margin: auto;
+}
+
 .avatar{
   position: relative;
     margin-left: 25%;
